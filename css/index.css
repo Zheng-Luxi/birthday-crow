@@ -1,0 +1,173 @@
+@font-face {
+	font-family: "幼圆";
+	src: url("./../font/youyuan.TTF");
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+
+	font-family: Consolas;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-image: linear-gradient(
+		135deg,
+		rgba( 105, 104, 170, .7 ),
+		rgba( 105, 104, 170, 1 )
+	);
+}
+
+@media screen and (max-width: 400px) {
+	.form {
+		width: 80vw;
+	}
+}
+
+@media screen and (min-width:  400px) {
+	.form {
+		width: 40vw;
+	}
+}
+
+.form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 3fr 2fr 2fr 3fr;
+
+	justify-items: center;
+	align-items: center;
+
+	height: 50vh;
+	background-color: rgba( 255, 255, 255, .1 );
+
+	box-shadow: 0 0 0 5px rgba( 255, 255, 255, .25 ),
+			    0 0 1px 1px #DDD inset;
+	border-radius: 10px;
+}
+
+.title {
+	grid-area: 1 / 1 / 1 / 3;
+
+	color: #FFF;
+	font: bold calc( 1.2vw + 3vh ) 幼圆;
+}
+
+.form div {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+
+	justify-items: center;
+	align-items: center;
+
+	width: 75%;
+	height: 100%;
+}
+
+.username {
+	grid-area: 2 / 1 / 2 / 3;
+}
+
+.password {
+	grid-area: 3 / 1 / 3 / 3;
+}
+
+label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+
+	position: relative;
+
+	color: #FFF;
+	font:  normal calc( 0.8vw + 2vh ) 幼圆;
+}
+
+label::after {
+	content: "";
+	width: 1px;
+	height: 80%;
+
+	position: absolute;
+	right: 0;
+	top: 50%;
+
+	transform: translateY( -50% );
+
+	background-image: linear-gradient(
+		180deg,
+		transparent,
+		#FFF,
+		transparent
+	);
+}
+
+input {
+	width: 70%;
+	height: 100%;
+
+	background-color: transparent;
+
+	color: #FFF;
+	font: normal calc( 0.8vw + 2vh ) Consolas;
+	text-align: center;
+
+	border: none;
+	border-bottom: solid 1px #DDD;
+	outline: none;
+
+	transition: all .1s ease 0s;
+}
+
+input:focus {
+	width: 80%;
+	border-bottom: solid 1px #FFF;
+}
+
+button {
+	width: 50%;
+	height: 50%;
+
+	background-color: transparent;
+
+	color: #FFF;
+	font: normal calc( .8vw + 2vh ) 幼圆;
+
+	border: none;
+	border-radius: 10px;
+
+	cursor: pointer;
+
+	transition: all .3s ease 0s;
+}
+
+.login {
+	background-color: rgba( 105, 104, 170, .5 );
+}
+
+.login:hover {
+	background-color: rgba( 105, 104, 170, .75 );
+}
+
+.reset {
+	background-color: rgba( 150, 100, 100, .5 );
+}
+
+.reset:hover {
+	background-color: rgba( 150, 100, 100, .75 );
+}
